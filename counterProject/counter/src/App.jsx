@@ -16,18 +16,16 @@ function App() {
   // })
 function addNum()
 {
-  setCounter(count+1);
-  if(count>=20)
+  if(count<20)
   {
-    setCounter(count=10)
+    setCounter(count+1);
   }
 }
 function removeNum()
 {
-  setCounter(count-1);
-  if(count<=0)
+  if(count>0)
   {
-    setCounter(count=0)
+    setCounter(count-1);
   }
 }
 
