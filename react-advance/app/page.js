@@ -95,29 +95,46 @@
 // export default page
 
 
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+// import "./globals.css";
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
+// const page = () => {
+//   const notify = () => {
+//     toast.success('Login Successfully!', {
+//       position: "top-center",
+//       autoClose: 5000,
+//       hideProgressBar: false,
+//       closeOnClick: true,
+//       pauseOnHover: true,
+//       draggable: true,
+//       progress: undefined,
+//       theme: "dark",
+//       });
+    
+//   }
+//   return (
+//     <>
+//     <button onClick={notify}>Login</button>
+//     <ToastContainer />
+//     </>
+//   )
+// }
+
+// export default page
+
+import React from 'react'
 import "./globals.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const page = () => {
-  const notify = () => {
-    toast.success('Login Successfully!', {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-      });
-    
-  }
   return (
     <>
-    <button onClick={notify}>Login</button>
-    <ToastContainer />
+    {/* <div className='main'>Main</div> */}
+    <h2 className='text-white bg-gray-950 w-auto h-auto p-10 mx-5 my-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+      Quos nemo eum quam delectus ad tempore numquam voluptate libero 
+      autem magnam! Id ipsum ullam accusantium 
+      ipsam asperiores recusandae voluptatum perferendis ea!</h2>
     </>
   )
 }
