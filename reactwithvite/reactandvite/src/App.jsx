@@ -10,7 +10,7 @@
 //   // }
 
 //   const [username, setUserName] = useState('')
-
+                            // Two Way Binding with toastify notification
 //         let notify = () => toast.success('Form Submitted Successfully!', {
 //         position: "bottom-center",
 //         autoClose: 5000,
@@ -56,18 +56,15 @@
 //       <ToastContainer />
 //     </>
 //   )
-// }
-
-// export default App
+  // }
 import React, { useEffect } from "react";
 import { useState } from "react";
-// import Header from './components/Header'
-// import Footer from './components/footer'
-// import Main from './components/Main'
 import Cards from "./components/Cards";
 import axios from "axios";
 const App = () => {
   const [data, setData] = useState([]);
+
+  // USERS DATA
   // let users = [
   //   {
   //     "name": "Alice Johnson",
@@ -108,70 +105,21 @@ const App = () => {
 
   let getData = async () => {
     let reponse = await axios.get("https://picsum.photos/v2/list");
-    setData(reponse.data);
-    
+    setData(reponse.data);  
   };
 
   useEffect(()=>{
     getData()
   },[])
-
   return (
     <>
-      {/* <Header /> */}
-
-      {/*
-      <div className='p-10'>
-        {users.map((elem, i)=>{
-          return <Cards key={i} user={elem.name} age={elem.age} city={elem.address} prof={elem.profession} />
-}
-)}
-      </div> 
-      */}
-      
-      
-
-      {/* <div className="p-10 text-center">
-        <button
-          onClick={getData}
-          className="px-10 py-5 text-lg font-serif bg-green-800 rounded-md text-white text-center">
-          UPDATE
-        </button>
-      </div> */}
-
       {data.map((elem, idx)=>{
-        return <div  key={idx} className='flex justify-around rounded-lg items-center m-5 gap-2 py-3 px-3 text-white text-center'> 
-          {/* <img className="w-96 flex" src={elem.download_url} alt="image not found" />
-          <h1>{elem.author}</h1> */}
+        return <div  
+          key={idx}> 
           <Cards img = {elem.download_url} author = {elem.author} />
         </div>  
       })}
-
-
-
-
-
-{/* if need to show data in card then uncomment this code, for image code is up */}
-      {/* {data.map((elem, idx) => {
-        if (elem.hasOwnProperty("id")) {
-          elem.id++;
-        }
-        return (
-          <Cards
-            key={idx}
-            userID={elem.id}
-            user={elem.author}
-            age={elem.age}
-            city={elem.address}
-            url={elem.download_url}
-          />
-        );
-      })} */}
-      {/* <Main />
-      <Footer /> */}
-      
     </>
-  );
-};
+  );};
 
 export default App;
