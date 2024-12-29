@@ -60,7 +60,9 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Cards from "./components/Cards";
-import axios from "axios";
+import Header from "./components/Header";
+// import Main from "./components/Main";
+// import axios from "axios";
 const App = () => {
   const [data, setData] = useState([]);
 
@@ -103,23 +105,30 @@ const App = () => {
   //   }
   // ]
 
-  let getData = async () => {
-    let reponse = await axios.get("https://picsum.photos/v2/list");
-    setData(reponse.data);  
-  };
+  // let getData = async () => {
+  //   let reponse = await axios.get("https://picsum.photos/v2/list");
+  //   setData(reponse.data);  
+  // };
 
-  useEffect(()=>{
-    getData()
-  },[])
+  // useEffect(()=>{
+  //   getData()
+  // },[])
+  // return (
+  //   <>
+  //     {data.map((elem, idx)=>{
+  //       return <div  
+  //         key={idx}> 
+  //         <Cards img = {elem.download_url} author = {elem.author} />
+  //       </div>  
+  //     })}
+  //   </>
+  // );
   return (
     <>
-      {data.map((elem, idx)=>{
-        return <div  
-          key={idx}> 
-          <Cards img = {elem.download_url} author = {elem.author} />
-        </div>  
-      })}
+      {/* <Header /> */}
+      {/* <Main /> */}
     </>
-  );};
-
+  );
+  };
+ 
 export default App;
