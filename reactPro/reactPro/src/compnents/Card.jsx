@@ -6,13 +6,17 @@ import AddToCart from '../pages/AddToCart'
 const Card = () => {
   const [data, setData] = useState(0)
   const [removecart, setRemoveCart] = useState(data)
+  const [cartData, setCartData] = useState([])
   //Counter to increase the number of items in the cart
   function addToCart(){
     setData(data+1)
   }
 
-  function removeFromCart(){
-    setData(data-1)
+  function AddItemToCart(elem)
+  {
+    return(
+      <AddToCart name = {elem.name} brand = {elem.brand} releasedYear = {elem.releasedYear} description = {elem.description} price = {elem.price} image = {elem.image} specification = {elem.specification}/>
+    )
   }
 // API data or JSON data to be displayed
    let apiData =  [
@@ -176,18 +180,21 @@ const Card = () => {
         <p className='mb-3'>$<span className='text-2xl font-bold'>{elem.price}</span></p>
         </div>
         <div className='text-center flex items-center justify-center'>
-        <button onClick={addToCart} className='bg-blue-500 hover:bg-blue-800 rounded-sm text-white font-bold px-5 py-3 mt-3'>
+        <button onClick={()=>{
+          addToCart() 
+          AddItemToCart()
+        }} className='bg-blue-500 hover:bg-blue-800 rounded-sm text-white font-bold px-5 py-3 mt-3'>
           Add to Cart
         </button>
-      <Cart addItemToCart={data} itemData={elem}/>
         </div>
       </div> 
       </div>
       
-      )
-    })
+    )
+  })
 }
 </div>
+  <Cart addItemToCart={data}/>
     </>
   )
 }
