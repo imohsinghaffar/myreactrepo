@@ -1,0 +1,34 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.card{
+    margin-top: 10px;
+    background-color: 'neutral-50';
+    width: 27%;
+    padding: 1rem;
+    border-radius: 5px;
+}
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+@media all and  (max-width: 900px) {
+    .card{
+        width: 35%;
+    }
+    }
+@media (max-width:650px) {
+    .card{
+        width: 60%;                                                                                     
+    }
+    }
+@media (max-width:500px) {
+    .card{
+        width: 70%;
+        flex-wrap: nowrap;
+    }
+    }

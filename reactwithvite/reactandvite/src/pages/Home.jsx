@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightLong } from '@fortawesome/free-solid-svg-icons'
 import { Container } from '@mui/material'
 import Box from '@mui/material/Box';
-import Cards from '../components/Cards'
+import Cards from '../components/Cards'   
 
 const Home = () => {
     const roseData = [
